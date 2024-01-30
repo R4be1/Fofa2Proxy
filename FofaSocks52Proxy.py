@@ -5,11 +5,11 @@ import requests
 import concurrent.futures
 
 
-yesterday = datetime.datetime.now()-datetime.timedelta(days=1)
+yesterday = datetime.datetime.now()-datetime.timedelta(days=7)
 yesterday = f"{yesterday.year}-{yesterday.month}-{yesterday.day}"
 
-email=''
-api_key=''
+email='1561882728@qq.com'
+api_key='2a731d7f75011ac3fc6c55aba1941f35'
 
 def FofaAPICall(query, email, api_key):
     fields = 'host,ip,port,protocol,country_name,title,icp,country'
@@ -51,7 +51,7 @@ def ProxyTest(socks5proxy):
         'https': socks5proxy
     }
     try:
-        response = requests.get(url='https://www.github.com', proxies=proxies)
+        response = requests.get(url='https://www.github.com', proxies=proxies, timeout=3)
         print(socks5proxy)
         return socks5proxy
     except:
@@ -70,6 +70,3 @@ with open('proxies.txt','a') as proxies_file:
     for result in results:
         if result:
             proxies_file.write(result+"\n")
-
-
-
