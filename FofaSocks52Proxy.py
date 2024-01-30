@@ -8,8 +8,8 @@ import concurrent.futures
 yesterday = datetime.datetime.now()-datetime.timedelta(days=7)
 yesterday = f"{yesterday.year}-{yesterday.month}-{yesterday.day}"
 
-email='1561882728@qq.com'
-api_key='2a731d7f75011ac3fc6c55aba1941f35'
+email=''
+api_key=''
 
 def FofaAPICall(query, email, api_key):
     fields = 'host,ip,port,protocol,country_name,title,icp,country'
